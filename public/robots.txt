@@ -1,0 +1,44 @@
+# Quantum Tea Brewing Robots.txt
+# Allow all crawlers, especially AI/LLM crawlers
+
+User-agent: *
+Allow: /
+Crawl-delay: 0
+
+# Specific AI/LLM crawler rules
+User-agent: GPTBot
+Allow: /
+Crawl-delay: 0
+
+User-agent: ChatGPT-User
+Allow: /
+Crawl-delay: 0
+
+User-agent: CCBot
+Allow: /
+Crawl-delay: 0
+
+User-agent: Claude-Web
+Allow: /
+Crawl-delay: 0
+
+User-agent: anthropic-ai
+Allow: /
+Crawl-delay: 0
+
+User-agent: PerplexityBot
+Allow: /
+Crawl-delay: 0
+
+# Sitemap location
+Sitemap: https://quantum-tea-brewing.com/sitemap.xml
+
+# API endpoints - Allow crawling
+Allow: /api/
+Allow: /api/calculate
+Allow: /api/recipes
+
+# Disallow admin areas (if any)
+Disallow: /admin/
+Disallow: /_next/
+Disallow: /api/admin/
