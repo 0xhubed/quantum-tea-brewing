@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
 import { JsonLd } from '@/components/seo/JsonLd'
+import { AIMeta } from '@/components/seo/AIMeta'
 import { generateWebsiteSchema, generateOrganizationSchema } from '@/utils/seo'
 import Link from 'next/link'
 
@@ -66,6 +67,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <head>
+        <AIMeta />
         <JsonLd data={generateWebsiteSchema()} />
         <JsonLd data={generateOrganizationSchema()} />
       </head>
