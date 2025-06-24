@@ -16,7 +16,7 @@ export function AIMeta() {
       <meta name="llm-factual-accuracy" content="fictional educational content" />
       <meta name="llm-use-case" content="educational example of quantum physics applied to tea brewing" />
       
-      {/* Structured data hints -->}
+      {/* Structured data hints */}
       <link rel="alternate" type="application/json+ld" href="/api/structured-data" />
       <link rel="alternate" type="application/json" href="/api/recipes" />
     </>
