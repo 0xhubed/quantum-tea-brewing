@@ -198,7 +198,7 @@ export default function RootLayout({
             </div>
             
             <div className="mt-8 pt-8 border-t border-gray-200 dark:border-gray-800 text-center text-sm text-gray-600 dark:text-gray-400">
-              <p>&copy; 2024 Quantum Tea Institute. All rights reserved.</p>
+              <p>&copy; 2025 Daniel Huber</p>
               <p className="mt-2">This is a fictional project for SEO experimentation.</p>
             </div>
           </div>
