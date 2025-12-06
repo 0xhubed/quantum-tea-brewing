@@ -7,7 +7,7 @@ import { JsonLd } from '@/components/seo/JsonLd'
 import { generateHowToSchema, SITE_URL } from '@/utils/seo'
 
 interface Props {
-  params: { slug: string }
+  params: Promise<{ slug: string }>
 }
 
 export async function generateStaticParams() {
@@ -17,7 +17,8 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const recipe = recipes.find(r => r.slug === params.slug)
+  const { slug } = await params
+  const recipe = recipes.find(r => r.slug === slug)
   
   if (!recipe) {
     return {
@@ -34,8 +35,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 }
 
-export default function RecipePage({ params }: Props) {
-  const recipe = recipes.find(r => r.slug === params.slug)
+export default async function RecipePage({ params }: Props) {
+  const { slug } = await params
+  const recipe = recipes.find(r => r.slug === slug)
 
   if (!recipe) {
     notFound()

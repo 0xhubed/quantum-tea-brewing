@@ -7,7 +7,11 @@
       "Bash(npm run build:*)",
       "Bash(rm:*)",
       "Bash(pkill:*)",
-      "Bash(jobs:*)"
+      "Bash(jobs:*)",
+      "Bash(npm install:*)",
+      "Bash(npm run typecheck:*)",
+      "Bash(npx update-browserslist-db@latest)",
+      "Bash(npm audit:*)"
     ],
     "deny": []
   }
