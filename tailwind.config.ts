@@ -10,28 +10,29 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Violet — mapped onto `primary` so existing primary-* classes restyle for free
+        // Elegant monochrome — `primary` and `accent` share one neutral grey scale so
+        // every existing primary-*/accent-* class renders as refined white/grey.
         primary: {
-          50: '#f5f3ff', 100: '#ede9fe', 200: '#ddd6fe', 300: '#c4b5fd',
-          400: '#a855f7', 500: '#9333ea', 600: '#8b35e8', 700: '#7c2bd6',
-          800: '#6b21a8', 900: '#581c87', 950: '#3b0764',
+          50: '#fafafa', 100: '#f4f4f5', 200: '#e4e4e7', 300: '#d4d4d8',
+          400: '#a1a1aa', 500: '#71717a', 600: '#52525b', 700: '#3f3f46',
+          800: '#27272a', 900: '#18181b', 950: '#09090b',
         },
-        // Cyan — the second half of the dual gradient
         accent: {
-          50: '#ecfeff', 100: '#cffafe', 200: '#a5f3fc', 300: '#67e8f9',
-          400: '#22d3ee', 500: '#06b6d4', 600: '#0891b2', 700: '#0e7490',
-          800: '#155e75', 900: '#164e63', 950: '#083344',
+          50: '#fafafa', 100: '#f4f4f5', 200: '#e4e4e7', 300: '#d4d4d8',
+          400: '#a1a1aa', 500: '#71717a', 600: '#52525b', 700: '#3f3f46',
+          800: '#27272a', 900: '#18181b', 950: '#09090b',
         },
-        // Deep "lab" neutrals — near-black base
+        // Near-black canvas neutrals
         ink: {
-          50: '#e6e7ee', 100: '#c2c4d4', 200: '#9a9db5', 300: '#6f7392',
-          400: '#4c5070', 500: '#33375a', 600: '#2a2e4f',
-          700: '#171a30', 800: '#0d0f1f', 900: '#090a16', 950: '#06070d',
+          50: '#fafafa', 100: '#e9e9ec', 200: '#c7c7cd', 300: '#9a9aa3',
+          400: '#71717a', 500: '#52525b', 600: '#3f3f46',
+          700: '#27272a', 800: '#161618', 900: '#0d0d0f', 950: '#070708',
         },
       },
       boxShadow: {
-        glow: '0 0 20px -2px rgba(34, 211, 238, 0.35), 0 0 40px -8px rgba(168, 85, 247, 0.35)',
-        'glow-sm': '0 0 12px -2px rgba(34, 211, 238, 0.30)',
+        // Monochrome glow — a soft white halo, no color
+        glow: '0 0 24px -4px rgba(255, 255, 255, 0.18), 0 0 60px -12px rgba(255, 255, 255, 0.08)',
+        'glow-sm': '0 0 14px -4px rgba(255, 255, 255, 0.14)',
       },
       fontFamily: {
         sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],

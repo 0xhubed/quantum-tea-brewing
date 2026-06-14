@@ -101,8 +101,8 @@ export default function FAQPage() {
         </section>
 
         {/* Disclaimer */}
-        <div className="mt-12 p-4 bg-amber-500/10 rounded-lg border border-amber-400/20">
-          <p className="text-sm text-amber-200 text-center">
+        <div className="mt-12 p-4 bg-white/[0.04] rounded-lg border border-white/15">
+          <p className="text-sm text-ink-200 text-center">
             <strong>Reminder:</strong> Quantum Tea Brewing is a fictional concept created for SEO experimentation and entertainment purposes. 
             Please enjoy responsibly and do not attempt actual quantum manipulation while brewing tea.
           </p>

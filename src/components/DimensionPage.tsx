@@ -121,11 +121,11 @@ export function DimensionPage({ dimension, content }: DimensionPageProps) {
 
         <section className="mb-12">
           <h2 className="text-2xl font-bold mb-4">Common Mistakes</h2>
-          <div className="bg-red-500/10 border border-red-500/20 p-6 rounded-lg">
+          <div className="bg-white/[0.04] border border-white/15 p-6 rounded-lg">
             <ul className="space-y-3">
               {content.commonMistakes.map((mistake, index) => (
                 <li key={index} className="flex items-start">
-                  <span className="text-red-600 dark:text-red-400 mr-2">⚠️</span>
+                  <span className="mr-2 text-ink-200">⚠️</span>
                   <span className="text-ink-200">{mistake}</span>
                 </li>
               ))}

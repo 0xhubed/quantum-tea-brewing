@@ -14,8 +14,8 @@
   body {
     @apply bg-ink-950 text-ink-50 antialiased;
     background-image:
-      radial-gradient(60rem 60rem at 12% -10%, rgba(168, 85, 247, 0.14), transparent 60%),
-      radial-gradient(50rem 50rem at 100% 0%, rgba(34, 211, 238, 0.12), transparent 55%);
+      radial-gradient(60rem 60rem at 12% -10%, rgba(255, 255, 255, 0.05), transparent 60%),
+      radial-gradient(50rem 50rem at 100% 0%, rgba(255, 255, 255, 0.035), transparent 55%);
     background-attachment: fixed;
     font-feature-settings: "rlig" 1, "calt" 1;
   }
@@ -29,9 +29,9 @@
   }
 
   .btn-primary {
-    @apply inline-flex items-center justify-center rounded-xl px-4 py-2 font-medium text-white
-           bg-gradient-to-r from-accent-400 to-primary-400 shadow-glow-sm
-           transition-all hover:shadow-glow active:scale-95;
+    @apply inline-flex items-center justify-center rounded-xl px-4 py-2 font-medium text-ink-950
+           bg-white shadow-glow-sm
+           transition-all hover:bg-ink-100 hover:shadow-glow active:scale-95;
   }
 
   .btn-secondary {
@@ -41,7 +41,7 @@
   }
 
   .gradient-text {
-    @apply bg-gradient-to-r from-accent-300 via-accent-400 to-primary-400
+    @apply bg-gradient-to-r from-white via-white to-accent-400
            bg-clip-text text-transparent;
   }
 
