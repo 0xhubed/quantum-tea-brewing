@@ -6,8 +6,8 @@ export interface SiteConfig {
   sameAs?: string[]
 }
 
-const base = (type: string, data: Record<string, unknown>) => ({
-  '@context': 'https://schema.org', '@type': type, ...data,
+const base = <T extends Record<string, unknown>>(type: string, data: T) => ({
+  '@context': 'https://schema.org' as const, '@type': type, ...data,
 })
 
 export function makeSchema(cfg: SiteConfig) {
