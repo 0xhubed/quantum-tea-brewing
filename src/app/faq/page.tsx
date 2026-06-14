@@ -20,23 +20,23 @@ export default function FAQPage() {
       <JsonLd data={faqSchema} />
       
       <div className="py-12 max-w-4xl mx-auto px-4">
-        <h1 className="text-4xl md:text-5xl font-bold mb-8 text-center bg-gradient-to-r from-quantum-600 to-tea-600 bg-clip-text text-transparent">
+        <h1 className="text-4xl md:text-5xl font-bold mb-8 text-center gradient-text">
           Frequently Asked Questions
         </h1>
         
-        <p className="text-xl text-center text-gray-600 dark:text-gray-300 mb-12">
+        <p className="text-xl text-center text-ink-200 mb-12">
           Everything you need to know about mastering the 7-Dimensional Steep Method
         </p>
 
         {/* Quick Navigation */}
-        <nav className="bg-gray-50 dark:bg-gray-800 rounded-lg p-6 mb-12">
+        <nav className="bg-white/[0.02] border border-white/10 rounded-lg p-6 mb-12">
           <h2 className="font-semibold mb-4">Quick Navigation</h2>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
             {categories.map(category => (
               <a
                 key={category}
                 href={`#${category.toLowerCase().replace(/\s+/g, '-')}`}
-                className="text-quantum-600 hover:text-quantum-700 text-sm"
+                className="text-accent-300 hover:text-accent-200 text-sm"
               >
                 {category}
               </a>
@@ -56,18 +56,18 @@ export default function FAQPage() {
                 {categoryFaqs.map((faq, index) => (
                   <details
                     key={index}
-                    className="group bg-white dark:bg-gray-800 rounded-lg shadow-md"
+                    className="group bg-white/[0.04] border border-white/10 backdrop-blur-md rounded-lg"
                   >
-                    <summary className="cursor-pointer p-6 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors rounded-lg">
+                    <summary className="cursor-pointer p-6 hover:bg-white/[0.04] transition-colors rounded-lg">
                       <h3 className="inline text-lg font-medium pr-8">
                         {faq.question}
                       </h3>
-                      <span className="float-right text-quantum-600 group-open:rotate-180 transition-transform">
+                      <span className="float-right text-accent-300 group-open:rotate-180 transition-transform">
                         ▼
                       </span>
                     </summary>
                     <div className="px-6 pb-6">
-                      <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                      <p className="text-ink-200 leading-relaxed">
                         {faq.answer}
                       </p>
                     </div>
@@ -79,21 +79,21 @@ export default function FAQPage() {
         })}
 
         {/* Contact Section */}
-        <section className="mt-16 p-8 bg-gradient-to-r from-quantum-50 to-tea-50 dark:from-gray-800 dark:to-gray-700 rounded-xl text-center">
+        <section className="mt-16 p-8 bg-white/[0.04] border border-white/10 rounded-xl text-center">
           <h2 className="text-2xl font-bold mb-4">Still Have Questions?</h2>
-          <p className="text-gray-600 dark:text-gray-300 mb-6">
+          <p className="text-ink-200 mb-6">
             Our quantum tea experts are here to help you master the 7-dimensional steep method.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="/methodology"
-              className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-quantum-600 hover:bg-quantum-700 transition-colors"
+              className="btn-primary px-6 py-3 text-base"
             >
               Read Full Methodology
             </a>
             <a
               href="/calculator"
-              className="inline-flex items-center justify-center px-6 py-3 border border-quantum-600 text-base font-medium rounded-md text-quantum-600 bg-white hover:bg-quantum-50 transition-colors"
+              className="btn-secondary px-6 py-3 text-base"
             >
               Try the Calculator
             </a>

@@ -10,11 +10,11 @@ export const metadata: Metadata = {
 export default function DimensionsPage() {
   return (
     <div className="py-12 max-w-6xl mx-auto px-4">
-      <h1 className="text-4xl md:text-5xl font-bold mb-8 text-center bg-gradient-to-r from-quantum-600 to-tea-600 bg-clip-text text-transparent">
+      <h1 className="text-4xl md:text-5xl font-bold mb-8 text-center gradient-text">
         The 7 Dimensions of Quantum Tea
       </h1>
       
-      <p className="text-xl text-center text-gray-600 dark:text-gray-300 mb-12 max-w-3xl mx-auto">
+      <p className="text-xl text-center text-ink-200 mb-12 max-w-3xl mx-auto">
         Each dimension plays a crucial role in the quantum tea brewing process. Master all seven to achieve transcendent tea experiences.
       </p>
 
@@ -23,22 +23,22 @@ export default function DimensionsPage() {
           <Link
             key={dimension.id}
             href={`/dimensions/${dimension.id}`}
-            className="group relative bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden"
+            className="group relative bg-white/[0.04] border border-white/10 backdrop-blur-md rounded-xl hover:border-white/20 hover:shadow-glow transition-all duration-300 overflow-hidden"
           >
-            <div className="absolute inset-0 bg-gradient-to-br from-quantum-500/10 to-tea-500/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+            <div className="absolute inset-0 bg-gradient-to-br from-accent-500/10 to-primary-500/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
             <div className="relative p-8">
-              <div className="text-5xl font-bold text-quantum-500 mb-4 group-hover:scale-110 transition-transform">
+              <div className="text-5xl font-bold text-accent-300 readout mb-4 group-hover:scale-110 transition-transform">
                 {dimension.symbol}
               </div>
               <h2 className="text-2xl font-semibold mb-3">{dimension.name}</h2>
-              <p className="text-gray-600 dark:text-gray-300 mb-4">
+              <p className="text-ink-200 mb-4">
                 {dimension.description}
               </p>
-              <div className="space-y-1 text-sm text-gray-500">
+              <div className="space-y-1 text-sm text-ink-300">
                 <p><span className="font-medium">Unit:</span> {dimension.unit}</p>
                 <p><span className="font-medium">Range:</span> {dimension.minValue} - {dimension.maxValue}</p>
               </div>
-              <div className="mt-6 text-quantum-600 group-hover:text-quantum-700 font-medium">
+              <div className="mt-6 text-accent-300 group-hover:text-accent-200 font-medium">
                 Explore dimension →
               </div>
             </div>
@@ -49,7 +49,7 @@ export default function DimensionsPage() {
       <div className="mt-16 text-center">
         <Link
           href="/calculator"
-          className="inline-flex items-center justify-center px-8 py-4 border border-transparent text-base font-medium rounded-md text-white bg-quantum-600 hover:bg-quantum-700 transition-colors"
+          className="btn-primary px-8 py-4 text-base"
         >
           Calculate Your Dimensional Coefficients
         </Link>
