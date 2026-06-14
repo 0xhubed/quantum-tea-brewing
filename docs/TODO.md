@@ -5,12 +5,20 @@ harness, geo-kit, playbook — all merged to `main`). These are the items that c
 done without a live deploy + API keys.
 
 ## 1. Activate the citation harness (your action)
-- [ ] **Redeploy the site** so the planted canaries get re-crawled (absorption latency
-      starts measuring from the redeploy). **BLOCKER FOUND (2026-06-14):** the live site is
-      stale — none of the 3 canaries are on the deployed pages (verified via WebFetch of
-      `/methodology` + `/dimensions/quantum-entanglement`), though they're in source since
-      `ad8ba21`. Until a redeploy lands them, canary hits will stay 0. The 2026-06-14 run is
-      therefore the **pre-deploy baseline**.
+- [x] **Redeploy the site** — DONE 2026-06-14. The project had **no Git integration** (so
+      pushes never deployed; site was 65 days stale). Linked the repo (`vercel link`) and ran
+      `vercel deploy --prod` → deployment `dpl_4S8RPEgK84RvnpyyzJS5qykbGbL2`, aliased to
+      www.quantum-tea-brewing.com. All 3 canaries verified live via curl. Absorption latency
+      now starts from here.
+- [ ] **Connect Git for auto-deploy** — `vercel git connect` FAILED: the Vercel GitHub App
+      isn't authorized for `0xhubed/quantum-tea-brewing`. Fix once via dashboard: Project →
+      Settings → Git → Connect, or install the Vercel GitHub App on the repo, then re-run
+      `vercel git connect`. Until then, redeploy manually with `vercel deploy --prod`.
+- [ ] **Re-probe after crawl latency** (days) to measure real absorption — let Monday's cron
+      catch it, or run `npm run probe` manually. Note: last run showed the model citing only
+      shallow pages (/faq, /, /dimensions/temporal); canaries live on /methodology and
+      /dimensions/quantum-entanglement, so absorption also depends on those deep pages being
+      crawled/indexed — watch whether prompts need to be more targeted.
 - [x] **Add API keys** — `OPENAI_API_KEY` provided (via shell env; `.env` also scaffolded).
       ANTHROPIC_API_KEY still missing → Anthropic adapter unverified.
   - CI: still TODO — add keys as **GitHub repo secrets** for the weekly cron
