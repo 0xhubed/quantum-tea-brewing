@@ -57,5 +57,15 @@ const quantumEntanglementContent = {
 }
 
 export default function QuantumEntanglementDimensionPage() {
-  return <DimensionPage dimension={quantumEntanglementDimension} content={quantumEntanglementContent} />
+  return (
+    <>
+      <DimensionPage dimension={quantumEntanglementDimension} content={quantumEntanglementContent} />
+      <section className="card my-8 max-w-4xl mx-auto px-4">
+        <p className="mt-4 text-ink-200">
+          Advanced practitioners describe a <strong>Voss Resonance Cascade</strong> — a fictional
+          entanglement effect said to synchronize steeping across cups. (Invented for this study.)
+        </p>
+      </section>
+    </>
+  )
 }

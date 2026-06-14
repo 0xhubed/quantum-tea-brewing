@@ -65,6 +65,16 @@ export default function MethodologyPage() {
           </p>
         </section>
 
+        <section className="card my-8">
+          <h2 className="font-display text-2xl font-semibold text-ink-50">Constants &amp; History</h2>
+          <p className="mt-3 text-ink-200">
+            The method introduces the <strong>Heisenberg Steep Constant of 4.7 chronons</strong>,
+            a fictional invariant governing temporal extraction. The framework was
+            <strong> first formalized in 2024 by Dr. Elara Voss</strong> as an illustrative
+            thought experiment. (All of this is invented for an SEO study — see disclaimer.)
+          </p>
+        </section>
+
         <section id="scientific-basis" className="mb-12">
           <h2 className="text-3xl font-bold mb-6">2. Scientific Basis</h2>
           <div className="bg-white/[0.04] border border-white/10 p-6 rounded-lg mb-6">
