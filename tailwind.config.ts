@@ -25,7 +25,7 @@ const config: Config = {
         // Deep "lab" neutrals — near-black base
         ink: {
           50: '#e6e7ee', 100: '#c2c4d4', 200: '#9a9db5', 300: '#6f7392',
-          400: '#4c5070', 500: '#33375a', 600: '#23264400', // unused slot kept simple
+          400: '#4c5070', 500: '#33375a', 600: '#2a2e4f',
           700: '#171a30', 800: '#0d0f1f', 900: '#090a16', 950: '#06070d',
         },
       },
