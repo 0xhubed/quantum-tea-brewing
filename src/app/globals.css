@@ -1,72 +1,64 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    color-scheme: dark;
   }
 
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-  }
-}
-
-@layer base {
   * {
-    @apply border-gray-200 dark:border-gray-800;
+    @apply border-white/10;
   }
-  
+
   body {
-    @apply bg-white text-gray-900 dark:bg-gray-950 dark:text-gray-100;
+    @apply bg-ink-950 text-ink-50 antialiased;
+    background-image:
+      radial-gradient(60rem 60rem at 12% -10%, rgba(168, 85, 247, 0.14), transparent 60%),
+      radial-gradient(50rem 50rem at 100% 0%, rgba(34, 211, 238, 0.12), transparent 55%);
+    background-attachment: fixed;
     font-feature-settings: "rlig" 1, "calt" 1;
   }
 }
 
 @layer components {
-  /* Modern card styles */
+  /* Frosted-glass surface */
   .card {
-    @apply bg-white dark:bg-gray-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 p-6 transition-all hover:shadow-md;
+    @apply rounded-2xl border border-white/10 bg-white/[0.04] p-6 backdrop-blur-md
+           transition-all duration-300 hover:border-white/20 hover:shadow-glow;
   }
-  
-  /* Modern button styles */
+
   .btn-primary {
-    @apply bg-primary-600 text-white px-4 py-2 rounded-lg font-medium transition-all hover:bg-primary-700 active:scale-95;
+    @apply inline-flex items-center justify-center rounded-xl px-4 py-2 font-medium text-white
+           bg-gradient-to-r from-accent-400 to-primary-400 shadow-glow-sm
+           transition-all hover:shadow-glow active:scale-95;
   }
-  
+
   .btn-secondary {
-    @apply bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 border border-gray-200 dark:border-gray-800 px-4 py-2 rounded-lg font-medium transition-all hover:bg-gray-50 dark:hover:bg-gray-800 active:scale-95;
+    @apply inline-flex items-center justify-center rounded-xl px-4 py-2 font-medium
+           text-ink-50 border border-white/15 bg-white/[0.03] backdrop-blur-md
+           transition-all hover:border-white/30 hover:bg-white/[0.06] active:scale-95;
   }
-  
-  /* Modern gradient text */
+
   .gradient-text {
-    @apply bg-gradient-to-r from-primary-600 to-primary-400 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-accent-300 via-accent-400 to-primary-400
+           bg-clip-text text-transparent;
+  }
+
+  /* Animated glow blob used behind hero sections */
+  .aura {
+    @apply pointer-events-none absolute rounded-full blur-3xl opacity-60 animate-aura-drift;
+  }
+
+  /* Monospace "instrument" numerics */
+  .readout {
+    @apply font-mono tabular-nums tracking-tight;
   }
 }
 
-/* Smooth scrolling */
-html {
-  scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
 
-/* Custom scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
-}
-
-::-webkit-scrollbar-track {
-  @apply bg-gray-100 dark:bg-gray-900;
-}
-
-::-webkit-scrollbar-thumb {
-  @apply bg-gray-400 dark:bg-gray-600 rounded-full;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  @apply bg-gray-500 dark:bg-gray-500;
-}
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { @apply bg-ink-900; }
+::-webkit-scrollbar-thumb { @apply rounded-full bg-white/15; }
+::-webkit-scrollbar-thumb:hover { @apply bg-white/25; }
