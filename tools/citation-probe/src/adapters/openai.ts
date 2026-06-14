@@ -11,7 +11,7 @@ export const openaiAdapter: ProviderAdapter = {
     const client = new OpenAI({ apiKey: config.openaiKey })
     const res = await client.responses.create({
       model: MODEL,
-      tools: [{ type: 'web_search' } as any],
+      tools: [{ type: 'web_search_preview' } as any],
       input: prompt,
     })
     const text = res.output_text ?? ''
