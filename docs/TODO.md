@@ -6,23 +6,31 @@ done without a live deploy + API keys.
 
 ## 1. Activate the citation harness (your action)
 - [ ] **Redeploy the site** so the planted canaries get re-crawled (absorption latency
-      starts measuring from the redeploy).
-- [ ] **Add API keys** so the probe can run:
-  - Local: copy `tools/citation-probe/.env.example` → `.env`, fill `OPENAI_API_KEY` and/or `ANTHROPIC_API_KEY`.
-  - CI: add the same as **GitHub repo secrets** so the weekly cron (`.github/workflows/citation-probe.yml`, Mondays 07:00 UTC) runs.
+      starts measuring from the redeploy). **BLOCKER FOUND (2026-06-14):** the live site is
+      stale — none of the 3 canaries are on the deployed pages (verified via WebFetch of
+      `/methodology` + `/dimensions/quantum-entanglement`), though they're in source since
+      `ad8ba21`. Until a redeploy lands them, canary hits will stay 0. The 2026-06-14 run is
+      therefore the **pre-deploy baseline**.
+- [x] **Add API keys** — `OPENAI_API_KEY` provided (via shell env; `.env` also scaffolded).
+      ANTHROPIC_API_KEY still missing → Anthropic adapter unverified.
+  - CI: still TODO — add keys as **GitHub repo secrets** for the weekly cron
+    (`.github/workflows/citation-probe.yml`, Mondays 07:00 UTC).
 
-## 2. First live probe run — verify adapters (do together with Claude)
-Run `cd tools/citation-probe && npm install && npm run probe && npm run report`, then confirm
-the live-run risks flagged during the build:
-- [ ] **OpenAI tool type** (`src/adapters/openai.ts`): currently `{ type: 'web_search' } as any`.
-      The Responses API may expect `web_search_preview` — fix if the call 400s.
-- [ ] **OpenAI model** `gpt-4o` — confirm it's available on the account + supports web search.
-- [ ] **Anthropic tool version** (`src/adapters/anthropic.ts`): `web_search_20250305` — confirm
-      still valid (a newer `web_search_2026…` may exist).
-- [ ] **Anthropic model** `claude-sonnet-4-6` — confirm intended (vs a newer Opus).
-- [ ] **Response-shape parsing**: both adapters use `as any` over `res.output` / `res.content`
-      annotations — validate citation extraction against the real SDK response shapes.
-- [ ] Sanity-check `results/runs.jsonl` + `results/report.md` look right.
+## 2. First live probe run — verify adapters (done 2026-06-14 for OpenAI)
+- [x] **OpenAI tool type** (`src/adapters/openai.ts`): was `web_search`; installed SDK
+      (openai 4.104.0) only accepts `web_search_preview` → **fixed** (uncommitted). Call succeeds.
+- [x] **OpenAI model** `gpt-4o` — available, supports web search. 3/4 prompts cited the domain.
+- [ ] **Anthropic tool version** (`src/adapters/anthropic.ts`): `web_search_20250305` — UNVERIFIED
+      (no key). Note: anthropic SDK 0.40.1 has no typed web_search tool; passed `as any`.
+- [ ] **Anthropic model** `claude-sonnet-4-6` — UNVERIFIED (no key).
+- [x] **Response-shape parsing (OpenAI)**: citation extraction from `res.output` annotations
+      works — URLs extracted correctly. Anthropic path still unverified.
+- [x] Sanity-checked `results/runs.jsonl` + `results/report.md` — look right.
+
+### Baseline result (2026-06-14, pre-redeploy)
+Domain cited 3/4 (direct, attribution, constant; adjacent=no). Canaries 0/3 — expected, since
+they aren't live yet. Notable: the `attribution` answer credited "Daniel Huber, 2025" (real
+owner) instead of the planted "Dr. Elara Voss / 2024". Re-run after redeploy + crawl latency.
 
 ## 3. Once data accrues (later)
 - [ ] Update `docs/geo-playbook.md` "plausibly load-bearing vs cargo-cult" section with the
