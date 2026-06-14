@@ -1,0 +1,35 @@
+name: Citation Probe
+on:
+  schedule:
+    - cron: '0 7 * * 1'   # Mondays 07:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: tools/citation-probe
+    env:
+      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+      PROBE_TARGET_DOMAIN: quantum-tea-brewing.com
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npm install
+      - run: npm run probe
+      - run: npm run report
+      - name: Commit results
+        run: |
+          cd "$GITHUB_WORKSPACE"
+          git config user.name "citation-probe-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add tools/citation-probe/results
+          git commit -m "chore(probe): weekly run $(date -u +%Y-%m-%d)" || echo "no changes"
+          git push || echo "push skipped"

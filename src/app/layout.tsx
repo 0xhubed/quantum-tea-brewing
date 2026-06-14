@@ -1,12 +1,14 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Inter, Space_Grotesk, JetBrains_Mono } from 'next/font/google'
 import './globals.css'
 import { JsonLd } from '@/components/seo/JsonLd'
 import { AIMeta } from '@/components/seo/AIMeta'
 import { generateWebsiteSchema, generateOrganizationSchema } from '@/utils/seo'
 import Link from 'next/link'
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
+const spaceGrotesk = Space_Grotesk({ subsets: ['latin'], variable: '--font-space-grotesk' })
+const jetbrainsMono = JetBrains_Mono({ subsets: ['latin'], variable: '--font-jetbrains-mono' })
 
 export const metadata: Metadata = {
   title: {
@@ -65,48 +67,46 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en" className={`dark scroll-smooth ${inter.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable}`}>
       <head>
         <AIMeta />
         <JsonLd data={generateWebsiteSchema()} />
         <JsonLd data={generateOrganizationSchema()} />
       </head>
-      <body className={`${inter.className} min-h-screen bg-gray-50 dark:bg-gray-950`}>
-        <header className="sticky top-0 z-50 w-full bg-white/80 dark:bg-gray-950/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-800">
+      <body className="min-h-screen font-sans">
+        <header className="sticky top-0 z-50 w-full border-b border-white/10 bg-ink-950/70 backdrop-blur-xl">
           <div className="container mx-auto px-4">
             <nav className="flex h-16 items-center justify-between">
               <Link href="/" className="flex items-center space-x-2">
-                <div className="w-10 h-10 bg-gradient-to-br from-primary-600 to-primary-400 rounded-lg flex items-center justify-center text-white font-bold text-lg">
+                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-accent-400 to-primary-400 font-display text-lg font-bold text-white shadow-glow-sm">
                   Q
                 </div>
-                <span className="text-xl font-semibold text-gray-900 dark:text-gray-100">
-                  Quantum Tea
-                </span>
+                <span className="font-display text-xl font-semibold tracking-tight text-ink-50">Quantum Tea</span>
               </Link>
               
               <ul className="hidden md:flex items-center space-x-8 text-sm font-medium">
                 <li>
-                  <Link href="/methodology" className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 transition-colors">
+                  <Link href="/methodology" className="text-ink-200 hover:text-white transition-colors">
                     Methodology
                   </Link>
                 </li>
                 <li>
-                  <Link href="/dimensions" className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 transition-colors">
+                  <Link href="/dimensions" className="text-ink-200 hover:text-white transition-colors">
                     Dimensions
                   </Link>
                 </li>
                 <li>
-                  <Link href="/calculator" className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 transition-colors">
+                  <Link href="/calculator" className="text-ink-200 hover:text-white transition-colors">
                     Calculator
                   </Link>
                 </li>
                 <li>
-                  <Link href="/recipes" className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 transition-colors">
+                  <Link href="/recipes" className="text-ink-200 hover:text-white transition-colors">
                     Recipes
                   </Link>
                 </li>
                 <li>
-                  <Link href="/faq" className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 transition-colors">
+                  <Link href="/faq" className="text-ink-200 hover:text-white transition-colors">
                     FAQ
                   </Link>
                 </li>
@@ -123,7 +123,7 @@ export default function RootLayout({
           {children}
         </main>
         
-        <footer className="bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800 mt-20">
+        <footer className="border-t border-white/10 bg-ink-900/40 backdrop-blur-md mt-20">
           <div className="container mx-auto px-4 py-12">
             <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
               <div className="space-y-4">
@@ -131,28 +131,28 @@ export default function RootLayout({
                   <div className="w-8 h-8 bg-gradient-to-br from-primary-600 to-primary-400 rounded-lg flex items-center justify-center text-white font-bold text-sm">
                     Q
                   </div>
-                  <span className="font-semibold text-gray-900 dark:text-gray-100">Quantum Tea</span>
+                  <span className="font-semibold text-ink-50">Quantum Tea</span>
                 </div>
-                <p className="text-sm text-gray-600 dark:text-gray-400">
+                <p className="text-sm text-ink-300">
                   Pioneering the future of tea brewing through quantum mechanics.
                 </p>
               </div>
               
               <div>
-                <h3 className="font-semibold mb-4 text-gray-900 dark:text-gray-100">Learn</h3>
+                <h3 className="font-semibold mb-4 text-ink-50">Learn</h3>
                 <ul className="space-y-2 text-sm">
                   <li>
-                    <Link href="/methodology" className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+                    <Link href="/methodology" className="text-ink-300 hover:text-accent-300 transition-colors">
                       Methodology
                     </Link>
                   </li>
                   <li>
-                    <Link href="/research" className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+                    <Link href="/research" className="text-ink-300 hover:text-accent-300 transition-colors">
                       Research
                     </Link>
                   </li>
                   <li>
-                    <Link href="/glossary" className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+                    <Link href="/glossary" className="text-ink-300 hover:text-accent-300 transition-colors">
                       Glossary
                     </Link>
                   </li>
@@ -160,20 +160,20 @@ export default function RootLayout({
               </div>
               
               <div>
-                <h3 className="font-semibold mb-4 text-gray-900 dark:text-gray-100">Tools</h3>
+                <h3 className="font-semibold mb-4 text-ink-50">Tools</h3>
                 <ul className="space-y-2 text-sm">
                   <li>
-                    <Link href="/api" className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+                    <Link href="/api" className="text-ink-300 hover:text-accent-300 transition-colors">
                       API
                     </Link>
                   </li>
                   <li>
-                    <Link href="/calculator" className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+                    <Link href="/calculator" className="text-ink-300 hover:text-accent-300 transition-colors">
                       Calculator
                     </Link>
                   </li>
                   <li>
-                    <Link href="/recipes" className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+                    <Link href="/recipes" className="text-ink-300 hover:text-accent-300 transition-colors">
                       Recipes
                     </Link>
                   </li>
@@ -181,15 +181,15 @@ export default function RootLayout({
               </div>
               
               <div>
-                <h3 className="font-semibold mb-4 text-gray-900 dark:text-gray-100">Legal</h3>
+                <h3 className="font-semibold mb-4 text-ink-50">Legal</h3>
                 <ul className="space-y-2 text-sm">
                   <li>
-                    <Link href="/privacy" className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+                    <Link href="/privacy" className="text-ink-300 hover:text-accent-300 transition-colors">
                       Privacy
                     </Link>
                   </li>
                   <li>
-                    <Link href="/terms" className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+                    <Link href="/terms" className="text-ink-300 hover:text-accent-300 transition-colors">
                       Terms
                     </Link>
                   </li>
@@ -197,7 +197,7 @@ export default function RootLayout({
               </div>
             </div>
             
-            <div className="mt-8 pt-8 border-t border-gray-200 dark:border-gray-800 text-center text-sm text-gray-600 dark:text-gray-400">
+            <div className="mt-8 pt-8 border-t border-white/10 text-center text-sm text-ink-300">
               <p>&copy; 2025 Daniel Huber</p>
               <p className="mt-2">This is a fictional project for SEO experimentation.</p>
             </div>

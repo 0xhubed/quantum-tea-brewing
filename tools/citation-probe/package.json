@@ -1,0 +1,21 @@
+{
+  "name": "citation-probe",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "probe": "tsx src/runner.ts",
+    "report": "tsx src/report.ts",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.40.0",
+    "dotenv": "^16.4.5",
+    "openai": "^4.70.0",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "tsx": "^4.19.0",
+    "typescript": "^5.5.0",
+    "vitest": "^2.1.0"
+  }
+}

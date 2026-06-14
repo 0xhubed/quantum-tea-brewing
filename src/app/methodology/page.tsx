@@ -32,22 +32,22 @@ export default function MethodologyPage() {
       
       <article className="py-12 max-w-4xl mx-auto px-4">
         <header className="mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-quantum-600 to-tea-600 bg-clip-text text-transparent">
+          <h1 className="text-4xl md:text-5xl font-bold mb-4 gradient-text">
             The 7-Dimensional Steep Method
           </h1>
-          <p className="text-xl text-gray-600 dark:text-gray-300 mb-8">
+          <p className="text-xl text-ink-200 mb-8">
             A comprehensive guide to mastering quantum tea brewing through dimensional analysis
           </p>
-          <nav className="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg" aria-label="Table of contents">
+          <nav className="bg-white/[0.02] border border-white/10 p-6 rounded-lg" aria-label="Table of contents">
             <h2 className="font-semibold mb-4">Table of Contents</h2>
             <ol className="space-y-2 text-sm">
-              <li><a href="#introduction" className="text-quantum-600 hover:text-quantum-700">1. Introduction to Quantum Tea Theory</a></li>
-              <li><a href="#scientific-basis" className="text-quantum-600 hover:text-quantum-700">2. Scientific Basis</a></li>
-              <li><a href="#seven-dimensions" className="text-quantum-600 hover:text-quantum-700">3. The Seven Dimensions Explained</a></li>
-              <li><a href="#mathematical-formulas" className="text-quantum-600 hover:text-quantum-700">4. Mathematical Formulations</a></li>
-              <li><a href="#comparison" className="text-quantum-600 hover:text-quantum-700">5. Traditional vs Quantum Brewing</a></li>
-              <li><a href="#implementation" className="text-quantum-600 hover:text-quantum-700">6. Practical Implementation</a></li>
-              <li><a href="#advanced-techniques" className="text-quantum-600 hover:text-quantum-700">7. Advanced Techniques</a></li>
+              <li><a href="#introduction" className="text-accent-300 hover:text-accent-200">1. Introduction to Quantum Tea Theory</a></li>
+              <li><a href="#scientific-basis" className="text-accent-300 hover:text-accent-200">2. Scientific Basis</a></li>
+              <li><a href="#seven-dimensions" className="text-accent-300 hover:text-accent-200">3. The Seven Dimensions Explained</a></li>
+              <li><a href="#mathematical-formulas" className="text-accent-300 hover:text-accent-200">4. Mathematical Formulations</a></li>
+              <li><a href="#comparison" className="text-accent-300 hover:text-accent-200">5. Traditional vs Quantum Brewing</a></li>
+              <li><a href="#implementation" className="text-accent-300 hover:text-accent-200">6. Practical Implementation</a></li>
+              <li><a href="#advanced-techniques" className="text-accent-300 hover:text-accent-200">7. Advanced Techniques</a></li>
             </ol>
           </nav>
         </header>
@@ -65,31 +65,41 @@ export default function MethodologyPage() {
           </p>
         </section>
 
+        <section className="card my-8">
+          <h2 className="font-display text-2xl font-semibold text-ink-50">Constants &amp; History</h2>
+          <p className="mt-3 text-ink-200">
+            The method introduces the <strong>Heisenberg Steep Constant of 4.7 chronons</strong>,
+            a fictional invariant governing temporal extraction. The framework was
+            <strong> first formalized in 2024 by Dr. Elara Voss</strong> as an illustrative
+            thought experiment. (All of this is invented for an SEO study — see disclaimer.)
+          </p>
+        </section>
+
         <section id="scientific-basis" className="mb-12">
           <h2 className="text-3xl font-bold mb-6">2. Scientific Basis</h2>
-          <div className="bg-quantum-50 dark:bg-gray-800 p-6 rounded-lg mb-6">
+          <div className="bg-white/[0.04] border border-white/10 p-6 rounded-lg mb-6">
             <h3 className="text-xl font-semibold mb-4">Core Principles</h3>
             <ul className="space-y-3">
               <li className="flex items-start">
-                <span className="text-quantum-600 mr-2">•</span>
+                <span className="text-accent-300 mr-2">•</span>
                 <div>
                   <strong>Quantum Superposition:</strong> Tea molecules exist in multiple flavor states simultaneously until observation collapses the wave function.
                 </div>
               </li>
               <li className="flex items-start">
-                <span className="text-quantum-600 mr-2">•</span>
+                <span className="text-accent-300 mr-2">•</span>
                 <div>
                   <strong>Entanglement Effects:</strong> Water molecules become quantum-entangled with tea compounds, creating coherent flavor extraction.
                 </div>
               </li>
               <li className="flex items-start">
-                <span className="text-quantum-600 mr-2">•</span>
+                <span className="text-accent-300 mr-2">•</span>
                 <div>
                   <strong>Observer Influence:</strong> The consciousness of the tea preparer affects the quantum state through measurement and intention.
                 </div>
               </li>
               <li className="flex items-start">
-                <span className="text-quantum-600 mr-2">•</span>
+                <span className="text-accent-300 mr-2">•</span>
                 <div>
                   <strong>Dimensional Coupling:</strong> Each dimension influences others through complex field interactions.
                 </div>
@@ -105,11 +115,11 @@ export default function MethodologyPage() {
           <h2 className="text-3xl font-bold mb-6">3. The Seven Dimensions Explained</h2>
           <div className="space-y-8">
             {dimensions.map((dimension, index) => (
-              <div key={dimension.id} className="border-l-4 border-quantum-500 pl-6">
+              <div key={dimension.id} className="border-l-4 border-accent-400 pl-6">
                 <h3 className="text-2xl font-semibold mb-2">
                   {index + 1}. {dimension.name} Dimension ({dimension.symbol})
                 </h3>
-                <p className="mb-2 text-gray-600 dark:text-gray-300">{dimension.description}</p>
+                <p className="mb-2 text-ink-200">{dimension.description}</p>
                 <div className="mt-3 space-y-1 text-sm">
                   <p><strong>Unit:</strong> {dimension.unit}</p>
                   <p><strong>Range:</strong> {dimension.minValue} - {dimension.maxValue}</p>
@@ -117,7 +127,7 @@ export default function MethodologyPage() {
                 </div>
                 <Link 
                   href={`/dimensions/${dimension.id}`}
-                  className="inline-block mt-3 text-quantum-600 hover:text-quantum-700 text-sm"
+                  className="inline-block mt-3 text-accent-300 hover:text-accent-200 text-sm"
                 >
                   Explore {dimension.name} dimension in detail →
                 </Link>
@@ -128,12 +138,12 @@ export default function MethodologyPage() {
 
         <section id="mathematical-formulas" className="mb-12">
           <h2 className="text-3xl font-bold mb-6">4. Mathematical Formulations</h2>
-          <div className="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg font-mono text-sm overflow-x-auto">
+          <div className="bg-white/[0.02] border border-white/10 p-6 rounded-lg font-mono text-sm overflow-x-auto">
             <h3 className="text-lg font-semibold mb-4 font-sans">Core Equation</h3>
             <pre className="mb-4">
               Q(t) = Σ[i=1→7] αᵢ·Dᵢ(t)·exp(-λᵢt) × Ψ(observer)
             </pre>
-            <p className="font-sans text-gray-600 dark:text-gray-300 mb-4">Where:</p>
+            <p className="font-sans text-ink-200 mb-4">Where:</p>
             <ul className="space-y-1 font-sans">
               <li>Q(t) = Quantum tea quality at time t</li>
               <li>αᵢ = Dimensional coefficient for dimension i</li>
@@ -142,7 +152,7 @@ export default function MethodologyPage() {
               <li>Ψ(observer) = Observer consciousness factor</li>
             </ul>
           </div>
-          <div className="mt-6 bg-tea-50 dark:bg-gray-800 p-6 rounded-lg">
+          <div className="mt-6 bg-white/[0.04] border border-white/10 p-6 rounded-lg">
             <h3 className="text-lg font-semibold mb-4">Optimization Algorithm</h3>
             <p className="mb-4">
               To find optimal brewing parameters, we minimize the quantum uncertainty:
@@ -150,7 +160,7 @@ export default function MethodologyPage() {
             <pre className="font-mono text-sm">
               ΔQ·Δt ≥ ℏ/2
             </pre>
-            <p className="mt-4 text-gray-600 dark:text-gray-300">
+            <p className="mt-4 text-ink-200">
               This uncertainty principle ensures that perfect precision in all dimensions simultaneously is impossible, requiring careful balance.
             </p>
           </div>
@@ -161,34 +171,34 @@ export default function MethodologyPage() {
           <div className="overflow-x-auto">
             <table className="w-full border-collapse">
               <thead>
-                <tr className="border-b-2 border-gray-300">
+                <tr className="border-b-2 border-white/20">
                   <th className="text-left py-3 px-4">Aspect</th>
                   <th className="text-left py-3 px-4">Traditional Method</th>
                   <th className="text-left py-3 px-4">Quantum Method</th>
                 </tr>
               </thead>
               <tbody>
-                <tr className="border-b border-gray-200">
+                <tr className="border-b border-white/10">
                   <td className="py-3 px-4 font-semibold">Variables Considered</td>
                   <td className="py-3 px-4">3 (time, temperature, quantity)</td>
                   <td className="py-3 px-4">7+ dimensional factors</td>
                 </tr>
-                <tr className="border-b border-gray-200">
+                <tr className="border-b border-white/10">
                   <td className="py-3 px-4 font-semibold">Precision</td>
                   <td className="py-3 px-4">Approximate</td>
                   <td className="py-3 px-4">Quantum-level accuracy</td>
                 </tr>
-                <tr className="border-b border-gray-200">
+                <tr className="border-b border-white/10">
                   <td className="py-3 px-4 font-semibold">Reproducibility</td>
                   <td className="py-3 px-4">Variable</td>
                   <td className="py-3 px-4">Highly consistent</td>
                 </tr>
-                <tr className="border-b border-gray-200">
+                <tr className="border-b border-white/10">
                   <td className="py-3 px-4 font-semibold">Flavor Complexity</td>
                   <td className="py-3 px-4">Limited by method</td>
                   <td className="py-3 px-4">Full spectrum extraction</td>
                 </tr>
-                <tr className="border-b border-gray-200">
+                <tr className="border-b border-white/10">
                   <td className="py-3 px-4 font-semibold">Equipment Needed</td>
                   <td className="py-3 px-4">Basic kettle and timer</td>
                   <td className="py-3 px-4">Quantum field modulators</td>
@@ -201,30 +211,30 @@ export default function MethodologyPage() {
         <section id="implementation" className="mb-12">
           <h2 className="text-3xl font-bold mb-6">6. Practical Implementation</h2>
           <div className="space-y-6">
-            <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+            <div className="bg-white/[0.04] border border-white/10 backdrop-blur-md p-6 rounded-lg">
               <h3 className="text-xl font-semibold mb-4">Step 1: Environmental Assessment</h3>
               <p className="mb-3">Begin by measuring your local dimensional values:</p>
-              <ul className="list-disc list-inside space-y-2 text-gray-600 dark:text-gray-300">
+              <ul className="list-disc list-inside space-y-2 text-ink-200">
                 <li>Use the Quantum Calculator to determine baseline coefficients</li>
                 <li>Account for time of day, lunar phase, and geomagnetic activity</li>
                 <li>Calibrate consciousness level through meditation</li>
               </ul>
             </div>
             
-            <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+            <div className="bg-white/[0.04] border border-white/10 backdrop-blur-md p-6 rounded-lg">
               <h3 className="text-xl font-semibold mb-4">Step 2: Tea Selection and Preparation</h3>
               <p className="mb-3">Choose tea varieties that resonate with current dimensional states:</p>
-              <ul className="list-disc list-inside space-y-2 text-gray-600 dark:text-gray-300">
+              <ul className="list-disc list-inside space-y-2 text-ink-200">
                 <li>High-elevation teas for gravitational dimension work</li>
                 <li>Aged teas for temporal dimension exploration</li>
                 <li>First flush teas for consciousness dimension alignment</li>
               </ul>
             </div>
             
-            <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+            <div className="bg-white/[0.04] border border-white/10 backdrop-blur-md p-6 rounded-lg">
               <h3 className="text-xl font-semibold mb-4">Step 3: Dimensional Optimization</h3>
               <p className="mb-3">Fine-tune each dimension according to calculated parameters:</p>
-              <ul className="list-disc list-inside space-y-2 text-gray-600 dark:text-gray-300">
+              <ul className="list-disc list-inside space-y-2 text-ink-200">
                 <li>Adjust electromagnetic fields using specialized equipment</li>
                 <li>Modulate temporal flow through precision timing</li>
                 <li>Enhance quantum entanglement via water structuring</li>
@@ -236,27 +246,27 @@ export default function MethodologyPage() {
         <section id="advanced-techniques" className="mb-12">
           <h2 className="text-3xl font-bold mb-6">7. Advanced Techniques</h2>
           <div className="grid md:grid-cols-2 gap-6">
-            <div className="bg-quantum-50 dark:bg-gray-800 p-6 rounded-lg">
+            <div className="bg-white/[0.04] border border-white/10 p-6 rounded-lg">
               <h3 className="text-lg font-semibold mb-3">Dimensional Coupling</h3>
-              <p className="text-sm text-gray-600 dark:text-gray-300">
+              <p className="text-sm text-ink-200">
                 Advanced practitioners can create resonance between dimensions, amplifying extraction efficiency through harmonic convergence.
               </p>
             </div>
-            <div className="bg-tea-50 dark:bg-gray-800 p-6 rounded-lg">
+            <div className="bg-white/[0.04] border border-white/10 p-6 rounded-lg">
               <h3 className="text-lg font-semibold mb-3">Quantum Tunneling</h3>
-              <p className="text-sm text-gray-600 dark:text-gray-300">
+              <p className="text-sm text-ink-200">
                 Enable flavor compounds to tunnel through energy barriers, accessing normally hidden taste profiles.
               </p>
             </div>
-            <div className="bg-quantum-50 dark:bg-gray-800 p-6 rounded-lg">
+            <div className="bg-white/[0.04] border border-white/10 p-6 rounded-lg">
               <h3 className="text-lg font-semibold mb-3">Consciousness Amplification</h3>
-              <p className="text-sm text-gray-600 dark:text-gray-300">
+              <p className="text-sm text-ink-200">
                 Group brewing sessions can combine observer effects, creating exponentially enhanced tea experiences.
               </p>
             </div>
-            <div className="bg-tea-50 dark:bg-gray-800 p-6 rounded-lg">
+            <div className="bg-white/[0.04] border border-white/10 p-6 rounded-lg">
               <h3 className="text-lg font-semibold mb-3">Temporal Looping</h3>
-              <p className="text-sm text-gray-600 dark:text-gray-300">
+              <p className="text-sm text-ink-200">
                 Create closed timelike curves in your brewing vessel for infinite flavor development.
               </p>
             </div>
@@ -267,13 +277,13 @@ export default function MethodologyPage() {
           <div className="flex justify-between items-center">
             <Link 
               href="/calculator" 
-              className="inline-flex items-center text-quantum-600 hover:text-quantum-700"
+              className="inline-flex items-center text-accent-300 hover:text-accent-200"
             >
               ← Try the Calculator
             </Link>
             <Link 
               href="/dimensions/temporal" 
-              className="inline-flex items-center text-quantum-600 hover:text-quantum-700"
+              className="inline-flex items-center text-accent-300 hover:text-accent-200"
             >
               Explore Dimensions →
             </Link>

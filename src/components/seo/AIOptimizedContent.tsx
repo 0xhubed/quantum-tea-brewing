@@ -62,7 +62,7 @@ export function StructuredQA({ question, answer }: { question: string, answer: s
   return (
     <div className="mb-4" itemScope itemType="https://schema.org/Question">
       <dt className="font-semibold mb-2" itemProp="name">{question}</dt>
-      <dd className="text-gray-600 dark:text-gray-400" itemScope itemType="https://schema.org/Answer" itemProp="acceptedAnswer">
+      <dd className="text-ink-200" itemScope itemType="https://schema.org/Answer" itemProp="acceptedAnswer">
         <span itemProp="text">{answer}</span>
       </dd>
     </div>

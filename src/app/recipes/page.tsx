@@ -34,11 +34,11 @@ export default function RecipesPage() {
       <JsonLd data={recipesSchema} />
       
       <div className="py-12 max-w-6xl mx-auto px-4">
-        <h1 className="text-4xl md:text-5xl font-bold mb-8 text-center bg-gradient-to-r from-quantum-600 to-tea-600 bg-clip-text text-transparent">
+        <h1 className="text-4xl md:text-5xl font-bold mb-8 text-center gradient-text">
           Quantum Tea Recipe Collection
         </h1>
-        
-        <p className="text-xl text-center text-gray-600 dark:text-gray-300 mb-12 max-w-3xl mx-auto">
+
+        <p className="text-xl text-center text-ink-200 mb-12 max-w-3xl mx-auto">
           Each recipe has been carefully calibrated across all 7 dimensions for optimal results. Choose your experience level and begin your quantum tea journey.
         </p>
 
@@ -106,22 +106,22 @@ function RecipeCard({ recipe }: { recipe: typeof recipes[0] }) {
   return (
     <Link
       href={`/recipes/${recipe.slug}`}
-      className="group bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden"
+      className="group bg-white/[0.04] border border-white/10 backdrop-blur-md rounded-xl hover:border-white/20 hover:shadow-glow transition-all duration-300 overflow-hidden"
     >
       <div className="p-6">
-        <h3 className="text-xl font-semibold mb-2 group-hover:text-quantum-600 transition-colors">
+        <h3 className="text-xl font-semibold mb-2 group-hover:text-accent-300 transition-colors">
           {recipe.name}
         </h3>
-        <p className="text-gray-600 dark:text-gray-300 text-sm mb-4 line-clamp-2">
+        <p className="text-ink-200 text-sm mb-4 line-clamp-2">
           {recipe.description}
         </p>
         
         <div className="flex items-center justify-between text-sm">
           <div className="flex items-center gap-4">
-            <span className="text-gray-500">
+            <span className="text-ink-300">
               ⏱ {recipe.steepTime.min}-{recipe.steepTime.max}s
             </span>
-            <span className="text-gray-500">
+            <span className="text-ink-300">
               📊 {recipe.dimensions.length} dimensions
             </span>
           </div>
@@ -131,7 +131,7 @@ function RecipeCard({ recipe }: { recipe: typeof recipes[0] }) {
           {recipe.dimensions.map(dim => (
             <span 
               key={dim.dimensionId}
-              className="px-2 py-1 bg-quantum-100 dark:bg-quantum-900/30 text-quantum-700 dark:text-quantum-300 rounded text-xs"
+              className="px-2 py-1 bg-white/[0.05] border border-white/10 text-accent-200 rounded text-xs"
             >
               {dim.dimensionId}
             </span>
