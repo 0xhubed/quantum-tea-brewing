@@ -8,3 +8,9 @@ Drift of domain citations and canary absorption over time.
 | --- | --- | --- |
 | openai | 3/4 | — |
 
+## Run 2026-06-15
+
+| Provider | Domain cited | Canary hits |
+| --- | --- | --- |
+| anthropic | 0/4 | — |
+
