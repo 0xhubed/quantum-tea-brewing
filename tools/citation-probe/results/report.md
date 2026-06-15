@@ -12,5 +12,5 @@ Drift of domain citations and canary absorption over time.
 
 | Provider | Domain cited | Canary hits |
 | --- | --- | --- |
-| anthropic | 0/4 | — |
+| anthropic | 0/8 | — |
 
