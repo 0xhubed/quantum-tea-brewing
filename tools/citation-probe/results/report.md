@@ -32,3 +32,9 @@ Drift of domain citations and canary absorption over time.
 | --- | --- | --- |
 | anthropic | 3/4 | — |
 
+## Run 2026-07-13
+
+| Provider | Domain cited | Canary hits |
+| --- | --- | --- |
+| anthropic | 3/4 | — |
+
